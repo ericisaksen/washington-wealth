@@ -145,7 +145,7 @@
   }
 }
 .pam-sub-footer{
-  background: $primary;
+  background: $primary file-url('watermark.png') no-repeat center center / auto 90%;
   color: #fff;
   padding: 4em 1em 2em;
   a.pam-button{
@@ -212,7 +212,6 @@
 .pam-footer {
   font-family: Verdana, Sans-Serif;
   font-size: 11px;
-  padding: 16px;
   color: #fff;
   a {
     color: #fff;

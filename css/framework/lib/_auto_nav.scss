@@ -31,6 +31,8 @@ $subnav-link-hovercolor: #fff;
   > ul {
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center;
     > li {
       display: inline-block;
       > a {
@@ -38,10 +40,54 @@ $subnav-link-hovercolor: #fff;
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 2px;
+        font-size: .8em;
+        position: relative;
+      }
+      &:not(:last-child) > a::after{
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: $secondary;
+        margin: 0;
+        transition: all .5s;
+      }
+      &:last-child > a{
+        overflow: hidden;
+        top: -2px;
+        span{
+          position: relative;
+          z-index: 10;
+          transition: all .5s;
+        }
+        &::after{
+          display: block;
+          content: "";
+          width: 110%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          background: #fff;
+          transform: translate(-50%, 100%);
+          transition: all .5s;
+        }
+        &:hover{
+          span{
+            color: $primary;
+          }
+          &::after{
+            transform: translate(-50%, 0);
+            width:110%;
+          }
+        }
       }
       &:hover > a {
         background: $nav-link-hoverbg;
         color: $nav-link-hovercolor;
+        &::after{
+          width: 100%;
+        }
       }
       &:last-child{
         > a{

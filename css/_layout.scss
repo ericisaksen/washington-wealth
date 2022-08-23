@@ -116,7 +116,7 @@
       > ul{
         > li{
           > a{
-            font-size: .85em;
+            font-size: .75em;
             color: $primary;
           }
           &:hover{
@@ -128,8 +128,14 @@
             > a{
               border: 1px solid $primary;
               &:hover{
-                background: $primary;
                 color: #fff;
+                span{
+                  color: #fff;
+                }
+                &::after{
+                  background: $primary;
+                  transform: translate(-50%, 0);
+                }
               }
             }
           }
@@ -139,7 +145,7 @@
   }
 }
 .pam-sub-footer{
-  background: $primary file-url('watermark.png') no-repeat right -80px bottom -15px / auto 90%;
+  background: $primary;
   color: #fff;
   padding: 4em 1em 2em;
   a.pam-button{
@@ -199,7 +205,7 @@
       width: 50px;
       height: 4px;
       background: $secondary;
-      margin: 20px 0;
+      margin: 20px auto;
     }
   }
 }

@@ -46,11 +46,11 @@
       </div>
     </div>
     <div class="pam-sticky-footer">
-      <div class="pam-sub-footer">
+      <div class="pam-sub-footer pam-text-center">
         <div class="pam-container">
           <div class="pam-flex jc">
             <div class="pam-columns pam-large-3 pam-medium-6">
-              <h2>Our Location</h2>
+              <h2 class="pam-text-center">Our Location</h2>
               <p>{{ .site.address.address_line_1 }}<br/>
                 {{ if .site.address.address_line_2 }}{{ .site.address.address_line_2 }} <br/>{{ end }}
                 {{ .site.address.city }}, {{ .site.address.state}} {{ .site.address.zip }}</p>
@@ -65,13 +65,14 @@
                   <a class="pam-button" href=".12.htm"><span>Book an Appointment</span></a></p>
               </div>
               <div class="pam-large-6 pam-flex">
-                <div class="pam-large-8 pam-columns">
-                  <div class="pam-footer pam-container">
-                    <p>Securities and investment advisory services offered through Steward Partners Investment Solutions, LLC, registered broker/dealer, member <a href="https://www.finra.org" target="_blank">FINRA</a>/<a href="https://www.sipc.org" target="_blank">SIPC</a>, and SEC registered investment adviser. Investment Advisory Services may also be offered through Steward Partners Investment Advisory, LLC, an SEC registered investment adviser. Steward Partners Investment Solutions, LLC, Steward Partners Investment Advisory, LLC, and Steward Partners Global Advisory, LLC are affiliates and separately operated. Washington Wealth Group is a team at Steward Partners.</p>
-                    <p><strong><a href="https://www.stewardpartnersis.com/Regulatory-Information-&amp;-Disclosures.10.htm" target="_blank">Regulatory Information &amp; Disclosures</a> | <a href="https://www.stewardpartnersis.com/Important-Disclosures.11.htm" target="_blank">Important Disclosures</a></strong></p>
-                    <p>&copy; 2022 Steward Partners Global Advisory, LLC. All Rights Reserved.</p>
-                  </div>
+                <div class="pam-footer pam-container">
+                  <p>Securities and investment advisory services offered through Steward Partners Investment Solutions, LLC, registered broker/dealer, member <a href="https://www.finra.org" target="_blank">FINRA</a>/<a href="https://www.sipc.org" target="_blank">SIPC</a>, and SEC registered investment adviser. Investment Advisory Services may also be offered through Steward Partners Investment Advisory, LLC, an SEC registered investment adviser. Steward Partners Investment Solutions, LLC, Steward Partners Investment Advisory, LLC, and Steward Partners Global Advisory, LLC are affiliates and separately operated. Washington Wealth Group is a team at Steward Partners.</p>
+                  <p><strong><a href="https://www.stewardpartnersis.com/Regulatory-Information-&amp;-Disclosures.10.htm" target="_blank">Regulatory Information &amp; Disclosures</a> | <a href="https://www.stewardpartnersis.com/Important-Disclosures.11.htm" target="_blank">Important Disclosures</a></strong></p>
+                  <p>&copy; 2022 Steward Partners Global Advisory, LLC. All Rights Reserved.</p>
                 </div>
+              </div>
+              <div class="pam-large-3 pam-columns">
+                <img src="{{ file "footer-logo-new.png" }}" alt="" />
               </div>
             </div>
         </div>
@@ -86,7 +87,7 @@
 <script data-pam-template-name="nav" type="application/x-pam-template">
   <ul>
     {{ range $i, $n := .site.nav }}
-      <li><a{{ if $n.url }} href="{{ $n.url }}" {{ end }}{{ if $n.blank }} target="_blank"{{ end}}>{{ $n.title }}</a>
+      <li><a{{ if $n.url }} href="{{ $n.url }}" {{ end }}{{ if $n.blank }} target="_blank"{{ end}}><span>{{ $n.title }}</span></a>
         {{ if $n.sub_nav }}
         <div class="pam-sub-nav">
           <ul>

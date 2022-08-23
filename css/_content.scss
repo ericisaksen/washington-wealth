@@ -192,8 +192,8 @@ ul.buttons-list{
       }
     }
   }
-  .pam-tier-4,
-  .pam-tier-2{
+  .pam-tier-2,
+  .pam-tier-4{
     padding: 0;
     text-align: center;
     position: relative;
@@ -272,7 +272,6 @@ ul.buttons-list{
       font-size: 3em;
       color: #fff;
       color: $primary;
-      text-shadow: 4px 4px 0 #fff;
     }
     .intro-container{
       max-width: 1000px;
@@ -340,7 +339,58 @@ ul.buttons-list{
       }
     }
   }
-
+  .pam-tier-2{
+    background: $grayblue;
+    padding: 0 1vw;
+    .pam-container{
+      max-width: 1500px;
+      padding: 4em;
+      .pam-flex{
+        background: file-url('washington-dc-in-spring-2021-08-26-18-13-08-utc.png') no-repeat center center / cover;
+        position: relative;
+        padding: 0;
+        .pam-columns{
+          background: none;
+          border: none;
+          color: #fff;
+          border: 0;
+          border-right: 2px solid #fff;
+          padding: 8em 2em;
+          width: 25%;
+          margin: 0;
+          position: relative;
+          &::before{
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(#000, .35);
+            transition: all .5s;
+          }
+          &:last-child{
+            border: 0;
+          }
+          i{
+            background: none;
+            border: 1px solid #fff;
+            position: relative;
+          }
+          h3{
+            position: relative;
+          }
+          &:hover{
+            border-bottom: 0 !important;
+            &::before{
+              background: rgba(#000, .65);
+            }
+          }
+        }
+      }
+    }
+  }
   .pam-tier-1{
     @media #{$large-up}{
       padding: 5vw 1vw;
@@ -526,10 +576,18 @@ ul.sm-list{
         max-width: 90%;
         h1{
           color: #fff;
-
           letter-spacing: 3px;
+          margin: 0;
           @media #{$large-up}{
             font-size: 4vw;
+          }
+          &::after{
+            content: "";
+            display: block;
+            width: 50px;
+            height: 4px;
+            background: $secondary;
+            margin: 20px auto;
           }
         }
       }
@@ -1109,8 +1167,8 @@ ul.sm-list{
       left: 0;
       width: 30px;
       height: 30px;
-      border-top: 2px solid darken($grayblue, 10%);
-      border-left: 2px solid darken($grayblue, 10%);
+      border-top: 2px solid $secondary;
+      border-left: 2px solid $secondary;
     }
     &::after{
       content: "";
@@ -1120,8 +1178,8 @@ ul.sm-list{
       right: 0;
       width: 30px;
       height: 30px;
-      border-bottom: 2px solid darken($grayblue, 10%);
-      border-right: 2px solid darken($grayblue, 10%);
+      border-bottom: 2px solid $secondary;
+      border-right: 2px solid $secondary;
     }
   }
   

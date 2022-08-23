@@ -1,0 +1,50 @@
+---
+{
+  "title": "Wealth Planning & Coordination",
+  "process": [
+    {
+      "title": "01. Discovery",
+      "content": "<p>Once we’ve mutually determined our partnership is a good fit, we’ll engage in deeper conversations so we can learn what’s important to you. We’ll get to know you and your family, gather financial data, and develop a comprehensive understanding of your situation.</p>"
+    },
+    {
+      "title": "02. Financial analysis & strategic planning",
+      "content": "<p>Next we’ll analyze your balance sheet, pinpointing strengths and weaknesses so we can develop strategies that strengthen your overall financial wellbeing.</p>"
+    },
+    {
+      "title": "03. Life planning",
+      "content": "<p>Wealth management is never static. We meet with you frequently so we can help you analyze and navigate important life events such as marriage, retirement, or an inheritance.</p>"
+    },
+    {
+      "title": "04. Risk management",
+      "content": "<p>As we review your situation and goals, we’ll help you understand the potential threats to your financial wellbeing and present solutions that help mitigate risk and support long-term joy.</p>"
+    },
+    {
+      "title": "05. Inheritance, estate, and multigenerational planning",
+      "content": "<p>Once we understand your long-term goals and desires, we partner with your estate attorney to guide you through the estate planning process. Generational planning is a powerful component of wealth management, so we facilitate <a href=\".4.htm\">Family Summits for clients who qualify</a>. We also offer pro-bono financial counseling to <a href=\".4.htm\">younger family members</a>.</p>"
+    },
+    {
+      "title": "06. Tracking & monitoring",
+      "content": "<p>As we work with you, we continually monitor the economy and markets, track the progress of your financial plan and portfolio, and communicate with you to ensure your wealth is aligned with your goals. We’ll also help you share your plan with the pertinent people in your life.</p>"
+    }
+  ]
+}
+---
+<div class="int-tier fo-tier">
+  <div class="pam-container">
+    <div class="pam-flex jc">
+      <div class="pam-large-5 pam-large-order-2 pam-medium-7 pam-columns process-graphic">
+        <img data-ani="fadeInUp" src="{{ file "process-graphic.png" }}" alt="6 Step Process Graphic" />
+      </div>
+      <div class="pam-large-7 pam-large-order-1 pam-columns">
+        <h2 data-ani="fadeInUp">Our Holistic Approach</h2>
+        <p data-ani="fadeInUp" class="mb-40">Our firm offers a multifaceted approach to wealth management that marries all aspects of financial planning to steward your wealth at the highest level. When reviewing your financial world, we’ll address each of the following elements:</p>
+        {{ range $i, $s := .page.process }}
+          <div class="pam-section process-steps step-{{ $i }}" data-ani="fadeInUp">
+            <h3>{{ $s.title }}</h3>
+            {{ $s.content }}
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>

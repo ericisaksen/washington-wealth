@@ -1,0 +1,244 @@
+.pam-page-index{
+  .pam-header{
+    animation-delay: 1s;
+  }
+}
+.pam-header {
+  padding: 10px;
+  max-width: 100%;
+  background: #fff;
+  position: relative;
+  left: 0;
+  width: 100%;
+  transition: all .5s;
+  z-index: 1099;
+  .top-header{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    ul{
+      margin: 0;
+      padding: 0;
+      li{
+        display: inline-block;
+        margin-left: 20px;
+        a{
+          &[class^="lmg-fa"]{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: $primary;
+            border-radius: 100%;
+            text-decoration: none;
+            &.lmg-fa-facebook-f{
+              background: $facebook;
+              color: #fff;
+            }
+            color: #fff;
+            &.lmg-fa-linkedin-in{
+              background: $linkedin;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media #{$large-up}{
+    top: 20px;
+    width: calc(100% - 40px);
+    left: 20px;
+    z-index: 9997;
+    background: none;
+    position: absolute;
+    transition: top 0s;
+    .sticky-header & {
+      top: 0;
+      left: 0;
+      width: 100%;
+      position: fixed;
+    }
+  }
+  .pam-container{
+    max-width: 100%;
+  }
+  .logo-left{
+    img{
+      width: 400px;
+      max-width: 100%;
+      transition: all .5s;
+      line-height: 1;
+      @media #{$medium-only}{
+        max-width: 300px;
+      }
+    }
+    h1{
+      margin: 0;
+      padding: 0;
+      line-height: 0;
+    }
+  }
+  .header-right{
+    .cl-container{
+      margin-right: 1em;
+      a.button{
+        text-transform: uppercase;
+      }
+      .pam-hover-drop-down{
+        .pam-drop-down{
+          ul{
+            right: 0;
+            font-size: .85em;
+          }
+        }
+      }
+    }
+  }
+  .sticky-header &{
+    background: #fff;
+    .logo-left{
+      img{
+        width: 300px;
+        @media #{$medium-only}{
+          max-width: 200px;
+        }
+      }
+    }
+    .cl-container{
+      a.pam-button{
+        font-size: .75em;
+      }
+    }
+    .pam-auto-nav{
+      > ul{
+        > li{
+          > a{
+            font-size: .85em;
+            color: $primary;
+          }
+          &:hover{
+            > a{
+              color: #333;
+            }
+          }
+          &:last-child{
+            > a{
+              border: 1px solid $primary;
+              &:hover{
+                background: $primary;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.pam-sub-footer{
+  background: $primary file-url('watermark.png') no-repeat right -80px bottom -15px / auto 90%;
+  color: #fff;
+  padding: 4em 1em 2em;
+  a.pam-button{
+    border: 1px solid #fff;
+    color: #fff;
+    text-transform: uppercase;
+    background: none;
+    position: relative;
+    overflow: hidden;
+    font-size: .85em;
+    width: 300px;
+    letter-spacing: 2px;
+    color: #fff;
+    span{
+      transition: all .5s;
+      position: relative;
+    }
+    &::before{
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 110%;
+      height: 100%;
+      background: #fff;
+      transform: translate(-50%, 100%);
+      transition: all .5s;
+    }
+    &:hover{
+      opacity: 1;
+      span{
+        color: $primary;
+      }
+      &::before{
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+  .sm-list{
+    margin-top: 28px;
+    margin-bottom: 28px;
+  }
+  img{
+    width: 300px;
+  }
+  a{
+    color: #fff;
+    text-decoration: none;
+  }
+  h2{
+    font-size: 2em;
+    color: #fff;
+    &::after{
+      content: "";
+      display: block;
+      width: 50px;
+      height: 4px;
+      background: $secondary;
+      margin: 20px 0;
+    }
+  }
+}
+.pam-footer {
+  font-family: Verdana, Sans-Serif;
+  font-size: 11px;
+  padding: 16px;
+  color: #fff;
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+
+.reg-rep{
+  color: #f00;
+}
+
+
+@media #{$medium-down}{
+  .animated {
+		/*CSS transitions*/
+		-o-transition-property: none !important;
+		-moz-transition-property: none !important;
+		-ms-transition-property: none !important;
+		-webkit-transition-property: none !important;
+		transition-property: none !important;
+		/*CSS transforms*/
+		-o-transform: none !important;
+		-moz-transform: none !important;
+		-ms-transform: none !important;
+		-webkit-transform: none !important;
+		transform: none !important;
+		/*CSS animations*/
+		-webkit-animation: none !important;
+		-moz-animation: none !important;
+		-o-animation: none !important;
+		-ms-animation: none !important;
+		animation: none !important;
+	}
+}

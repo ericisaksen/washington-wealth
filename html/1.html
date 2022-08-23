@@ -1,0 +1,126 @@
+---
+{
+  "title": "Who We Are"
+}
+---
+<div class="int-tier pd-0">
+  <div class="pam-container">
+    <div class="intro-container pam-text-center" data-ani="fadeInUp">
+      <p>Our team works as a unit to comprehensively support your financial wellbeing. We collaborate constantly, working together so that every team member at any moment can provide insight and guidance about your financial plan. We’re always striving to improve, seeking industry knowledge and client feedback so our service to you improves with every interaction.</p>
+    </div>
+  </div>
+</div>
+<div class="int-tier pd-0">
+  <div class="pam-container pam-text-center">
+    <h2 class="pam-text-center" data-ani="fadeInUp">Meet Our Team</h2>
+    <div class="pam-flex team-container">
+      {{ range $i, $t := .site.team }}
+      <div class="pam-medium-3 pam-columns valign-top pam-text-center animated fadeInUp" data-ani="fadeInUp">
+        <div class="headshot-container">
+          <img src="{{ if $t.headshot }}{{ file $t.headshot }}{{ else }}https://via.placeholder.com/250x300{{ end }}" alt="Photo of {{ $t.name }}" />
+        </div>
+        <div class="team-meta">
+          <h2 class="team-name">{{ if $t.name }}{{ $t.name }}{{ else }}Insert Name{{ end }} {{ if $t.designations }}<span>{{ $t.designations }}</span>{{ end }}</h2>
+          {{ if $t.position }}<h3 class="team-position">{{ $t.position }}</h3>{{ end }}
+          <p><a href="#" class="pam-button" data-popup="bio-{{ $i }}"><span>Read Bio</span></a></p>
+          <ul class="team-contact-list">
+            {{ if $t.linkedin }}
+              <li><a class="lmg-fab lmg-fa-linkedin-in" href="{{ $t.linkedin }}" target="_blank"></a></li>
+            {{ end }}
+            {{ if $t.email }}
+              <li><a class="lmg-fas lmg-fa-envelope" href="mailto:{{ $t.email }}"></a></li>
+            {{ end }}
+            {{ if $t.phone }}
+              <li><a class="lmg-fas lmg-fa-mobile-alt" href="tel:{{ $t.phone }}"></a></li>
+            {{ end }}
+          </ul>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+<div class="int-tier why-tier">
+  <div class="pam-container">
+    <div class="pam-flex">
+      <div class="pam-large-5 pam-columns photo-container" data-ani="fadeInUp">
+        <!-- image -->
+      </div>
+      <div class="pam-large-7 pam-columns content-container right">
+        <div>
+          <h2 data-ani="fadeInUp">Why Us?</h2>
+          <p data-ani="fadeInUp">We offer a highly sophisticated approach to wealth management delivered with personal attention and care. Our exclusive service model allows us to be generous with our time while offering every client an elite and comprehensive experience. Our mission is to bridge the gap between your personal values and your monetary resources. We’re here to guide you to the intersection of your finances and your heart’s desires—a place of true wealth.</p>
+          <p data-ani="fadeInUp"><a href=".2.htm" class="pam-button"><span>What We Do</span></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="int-tier affiliations-tier">
+  <div class="pam-container pam-text-center">
+    <h2 data-ani="fadeInUp" class="pam-text-center">Our Affiliations</h2>
+    <div class="intro-container">
+      <p data-ani="fadeInUp">We’ve strategically aligned our firm with top industry organizations, allowing us to provide fully comprehensive service and<br class="pam-show-for-large-up" /> sophisticated resources that enhance your wealth management experience. By partnering with these entities,<br class="pam-show-for-large-up" /> we offer support for even the most complex planning cases.</p>
+    </div>
+    <div class="affiliations-container">
+      <div class="pam-flex ai sb">
+        <div class="pam-large-4 pam-columns" data-ani="fadeInUp">
+          <img src="{{ file "STEWARD_RGB-T.png" }}" alt="Steward Partners" />
+        </div>
+        <div class="pam-large-2 pam-columns" data-ani="fadeInUp">
+          <img src="{{ file "Goldman_Sachs.svg.png" }}" alt="Goldman Sachs" />
+        </div>
+        <div class="pam-large-4 pam-columns" data-ani="fadeInUp">
+          <img src="{{ file "partner-logos-raymond-james.png" }}" alt="Raymond James" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="int-tier protecting-tier">
+  <div class="pam-container">
+    <div class="pam-flex">
+      <div class="pam-large-5 pam-large-order-2 pam-columns photo-container" data-ani="fadeInUp">
+        <!-- image -->
+      </div>
+      <div class="pam-large-7 pam-large-order-1 pam-columns content-container left">
+        <div>
+          <h2 data-ani="fadeInUp">Protecting Your Privacy and Your Accounts</h2>
+          <p data-ani="fadeInUp">Managing your wealth is no minor responsibility. We’re honored to serve in such a singular role, which is why we’re diligent about protecting your privacy and safeguarding the assets under our care.</p>
+          <p data-ani="fadeInUp"><a class="pam-button" href="{{ file "detmer Cybersecurity-Brochure.pdf" }}" target="_blank"><span>Learn More</span></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ range $i, $t := .site.team }}
+  <div class="popup-container team-popup" data-popup-src="bio-{{$i}}">
+    <div class="pam-flex popup-team-container">
+      <div class="pam-medium-4 pam-columns valign-top pam-text-center popup-headshot-container">
+        <img src="{{ file $t.headshot }}" alt="{{ $t.name }}">
+      </div>
+      <div class="pam-medium-8 bio-side pam-columns valign-top bio">
+        <div class="bio-container">
+          <div class="popup-team-meta">
+            <h2>{{ $t.name }} {{ if $t.designations }}, {{ $t.designations }}{{ end }}</h2>
+            {{ if $t.position }}<h3 class="team-position">{{ $t.position }}</h3>{{ end }}
+          </div>
+          <ul class="team-contact-list">
+            {{ if $t.linkedin }}
+              <li><a class="lmg-fab lmg-fa-linkedin-in" href="{{ $t.linkedin }}" target="_blank"></a></li>
+            {{ end }}
+            {{ if $t.email }}
+              <li><a class="lmg-fas lmg-fa-envelope" href="mailto:{{ $t.email }}"></a></li>
+            {{ end }}
+            {{ if $t.phone }}
+              <li><a class="lmg-fas lmg-fa-mobile-alt" href="tel:{{ $t.phone }}"></a></li>
+            {{ end }}
+          </ul>
+          <div class="bio-content">
+            {{ $t.bio }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{{ end }}

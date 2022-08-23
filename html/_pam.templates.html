@@ -1,0 +1,103 @@
+<!-- BEGIN TEMPLATES -->
+<script data-pam-template-name="layout" type="application/x-pam-template">
+  <div class="pam-mobile-nav">
+    <ul>
+      <li><a class="pam-mobile-nav-close">Close</a></li>
+      <li><a href="index.cfm">Home</a></li>
+    </ul>
+    <%= render("nav") %>
+  </div>
+  <div class="pam-mobile-nav-toggle"><i class="lmg-fal lmg-fa-bars"></i></div>
+  <div class="pam-site-wrapper pam-sticky-wrapper">
+    <div class="pam-sticky-content">
+      <div class="pam-header animated slideInDown">
+        <div class="pam-container">
+          <div class="pam-flex jc ai">
+            <div class="pam-large-3 pam-medium-6 pam-columns valign-middle logo-left">
+              <% if(exists('.pam-page-index')) { %><h1><% } %>
+                <a href="index.cfm"><img src="{{ if .site.logo }}{{ file .site.logo }}{{ else }}//placehold.it/300x100?text=Insert Logo{{ end }}" {{ if .site.logo2 }}data-src="{{ file .site.logo2 }}"{{ end }} alt="{{ .site.title }}" /></a>
+              <% if(exists('.pam-page-index')) { %></h1><% } %>
+            </div>
+            <div class="pam-large-9 pam-medium-6 pam-columns valign-middle header-right">
+              <div class="pam-auto-nav pam-desktop-nav">
+                <%= render("nav") %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pam-page-content-container">
+        <% if (exists('.pam-page-interior')) { %>
+            <div class="title-container">
+              <div class="pam-container">
+                <% if (exists('#emerald-page-title')) { %>
+                  <h1 class="animated fadeInDown"><%= moveFrom('#emerald-page-title') %></h1>
+                <% } else if (exists('.pam-page-cfm')) { %>
+                  <h1 class="animated fadeInDown">Financial Glossary</h1>
+                <% } %>
+              </div>
+            </div>
+        <div class="pam-container pam-page-content">
+          <%= moveFrom("#emerald-page-content") %>
+        </div>
+      <% } else { %>
+      <%= moveFrom("#emerald-page-content") %>
+      <% } %>
+      </div>
+    </div>
+    <div class="pam-sticky-footer">
+      <div class="pam-sub-footer">
+        <div class="pam-container">
+          <div class="pam-flex jc">
+            <div class="pam-columns pam-large-3 pam-medium-6">
+              <h2>Our Location</h2>
+              <p>{{ .site.address.address_line_1 }}<br/>
+                {{ if .site.address.address_line_2 }}{{ .site.address.address_line_2 }} <br/>{{ end }}
+                {{ .site.address.city }}, {{ .site.address.state}} {{ .site.address.zip }}</p>
+                <!-- <h2>Christopher J. Detmer,<br/> CFP®, CHFC®, CLU® </h2>
+                <p>Call: <a href="tel:(202) 930-6011">(202) 930-6011</a><br/>
+                  <a href="mailto:chris.detmer@stewardpartners.com">Email Chris</a></p>
+                </p>
+                <h2>Aaron I. Brachman,<br/> CFP®, AAMS®, AIF® </h2>
+                <p>Call: <a href="tel:(202) 930-6012">(202) 930-6012</a><br/>
+                  <a href="mailto:aaron.brachman@stewardpartners.com">Email Aaron</a></p> -->
+                  <p><a class="pam-button" href=".11.htm"><span>Get in Touch</span></a><br/>
+                  <a class="pam-button" href=".12.htm"><span>Book an Appointment</span></a></p>
+              </div>
+              <div class="pam-large-6 pam-flex">
+                <div class="pam-large-8 pam-columns">
+                  <div class="pam-footer pam-container">
+                    <p>Securities and investment advisory services offered through Steward Partners Investment Solutions, LLC, registered broker/dealer, member <a href="https://www.finra.org" target="_blank">FINRA</a>/<a href="https://www.sipc.org" target="_blank">SIPC</a>, and SEC registered investment adviser. Investment Advisory Services may also be offered through Steward Partners Investment Advisory, LLC, an SEC registered investment adviser. Steward Partners Investment Solutions, LLC, Steward Partners Investment Advisory, LLC, and Steward Partners Global Advisory, LLC are affiliates and separately operated. Washington Wealth Group is a team at Steward Partners.</p>
+                    <p><strong><a href="https://www.stewardpartnersis.com/Regulatory-Information-&amp;-Disclosures.10.htm" target="_blank">Regulatory Information &amp; Disclosures</a> | <a href="https://www.stewardpartnersis.com/Important-Disclosures.11.htm" target="_blank">Important Disclosures</a></strong></p>
+                    <p>&copy; 2022 Steward Partners Global Advisory, LLC. All Rights Reserved.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pop-accent-1"></div>
+  <div class="pop-accent-2"></div>
+  <div class="popup-cast"></div>
+  <a class="lmg-fat lmg-fa-times close-popup"></a>
+</script>
+<script data-pam-template-name="nav" type="application/x-pam-template">
+  <ul>
+    {{ range $i, $n := .site.nav }}
+      <li><a{{ if $n.url }} href="{{ $n.url }}" {{ end }}{{ if $n.blank }} target="_blank"{{ end}}>{{ $n.title }}</a>
+        {{ if $n.sub_nav }}
+        <div class="pam-sub-nav">
+          <ul>
+            {{ range $i2, $sn := $n.sub_nav }}
+              <li><a href="{{ $sn.url }}"{{ if $sn.blank }} target="_blank"{{ end}}>{{ $sn.title }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
+        {{ end }}
+      </li>
+    {{ end }}
+  </ul>
+</script>
+<!-- END TEMPLATES -->

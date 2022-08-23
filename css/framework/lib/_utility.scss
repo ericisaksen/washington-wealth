@@ -35,7 +35,53 @@
   transition: opacity 1s, left 0s ease 1s;
   .popup-headshot-container{
     img{
-      width: 100%;
+      position: relative;
+      width: 90%;
+      z-index: 101;
+    }
+    .under-headshot{
+      padding: 1em;
+      border: 3px solid $secondary;
+      text-align: center;
+      padding-top: 100px;
+      position: relative;
+      top: -90px;
+      ul.popup-contact-list{
+        text-align: center;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        li{
+          width: 33.3333%;
+          list-style: none;
+          margin: 0 5px;
+          a{
+            text-align: left;
+            display: block;
+            margin: 0 auto;
+            background: $primary;
+            color: #fff;
+            padding: 1em .5em;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: .85em;
+            &:hover{
+              background: $gray !important;
+            }
+            &.linkedin{
+              background: $linkedin;
+            }
+            &.email{
+              background: $secondary;
+            }
+            i{
+              display: block;
+              margin-bottom: .25em;
+              font-size: 1.5em;
+            }
+          }
+        }
+      }
     }
   }
   .popup-team-meta{
@@ -184,6 +230,10 @@
   border-top: 2px solid $secondary;
   border-left: 2px solid $secondary;
   z-index: 9999999;
+  transform: translateX(-9999999999px);
+  .popup-active &{
+    transform: translateX(0);
+  }
 }
 .pop-accent-2{
   display: block;
@@ -195,6 +245,10 @@
   border-bottom: 2px solid $secondary;
   border-right: 2px solid $secondary;
   z-index: 9999999;
+  transform: translateX(-9999999999px);
+  .popup-active &{
+    transform: translateX(0);
+  }
 }
 .close-popup{
   position: fixed;

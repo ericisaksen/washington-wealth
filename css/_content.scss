@@ -201,6 +201,9 @@ ul.buttons-list{
     background: $grayblue;
     border-left: 20px solid #fff;
     border-right: 20px solid #fff;
+    .pam-container{
+      max-width: calc(1500px + 2em);
+    }
     h2{
       font-size: 3em;
       &::after{
@@ -305,6 +308,9 @@ ul.buttons-list{
     padding: 12vw 1vw;
     .pam-container{
       position: relative;
+      .content-container{
+        padding: 0 4em;
+      }
       &::before{
         content: "";
         display: block;
@@ -314,7 +320,7 @@ ul.buttons-list{
         height: 140%;
         width: 80%;
         background: #fff;
-        transform: translate(-10%, -50%);
+        transform: translate(0, -50%);
         border-bottom: 2px solid $primary;
       }
     }
@@ -354,6 +360,7 @@ ul.buttons-list{
           background: #fff;
           position: relative;
           left: -100px;
+          width: calc(100% + 100px);
           border-bottom: 2px solid $primary;
         }
       }
@@ -390,21 +397,28 @@ ul.buttons-list{
   }
   .pam-tier-5{
     background: $grayblue;
-    padding: 4vw 1vw 12vw;
+    padding: 4vw 1vw 4vw;
     border: 20px solid #fff;
     border-top: 0;
+    h3{
+      color: $secondary;
+      font-family: $copy-font;
+      letter-spacing: 2px;
+      margin-top: 1em;
+    }
     .pam-container{
       position: relative;
+      padding: 2em;
       &::before{
         content: "";
         display: block;
         position: absolute;
-        top: 50%;
+        top: 0;
         left: 50%;
-        height: 130%;
-        width: 80%;
+        height: 100%;
+        width: 100%;
         background: #fff;
-        transform: translate(-50%, -45%);
+        transform: translate(-50%, 0);
         border-bottom: 2px solid $primary;
       }
       h2::after{
@@ -413,6 +427,13 @@ ul.buttons-list{
     }
     .pam-columns{
       position: relative;
+      padding: 0;
+      &.first{
+        padding-right: .5em;
+      }
+      &.second{
+        padding-left: .5em;
+      }
     }
   }
 }
@@ -591,7 +612,7 @@ ul.sm-list{
         h2{
           font-family: $copy-font;
           font-size: 1.5em;
-          color: $secondary;
+          color: $primary;
           &::after{
             display: none;
           }
@@ -607,6 +628,15 @@ ul.sm-list{
 }
 .int-tier{
   padding: 6vw 1vw;
+  border-left: 20px solid #fff;
+  border-right: 20px solid #fff;
+  &.team-intro{
+    padding-top: 4vw;
+    padding-bottom: 0;
+  }
+  &.team-tier{
+    padding-top: 2vw;
+  }
   .team-container{
     .pam-columns{
       &:hover{
@@ -664,7 +694,6 @@ ul.sm-list{
   .investment-section{
     background: #fff;
     padding: 4em;
-    font-size: 1.15em;
     display: none;
     &.active{
       display: block;
@@ -735,11 +764,7 @@ ul.sm-list{
     }
   }
   &.cta-tier{
-    padding-top:1vw;
-    .pam-container{
-      background: $primary;
-      padding: 4em;
-    }
+    padding-top:0vw;
     .intro-container{
       padding: 2em;
       &::before{
@@ -749,24 +774,14 @@ ul.sm-list{
       &::after{
         border-right: 2px solid $secondary;
         border-bottom: 2px solid $secondary;
+        bottom: 2em;
       }
       p{
         font-size: 1.5em;
-        color: #fff;
+        color: $primary;
       }
     }
-    a.pam-button{
-      border: 1px solid #fff;
-      color: #fff;
-      &::before{
-        background: #fff;
-      }
-      &:hover{
-        span{
-          color: $primary;
-        }
-      }
-    }
+
   }
   &.nurture-tier{
     .pam-flex{
@@ -787,6 +802,7 @@ ul.sm-list{
     }
   }
   &.consulting-tier{
+    padding-top: 2vw;
     h3{
       color: $secondary;
       padding-bottom: 1em;
@@ -833,6 +849,9 @@ ul.sm-list{
         background: $bluetwo;
       }
     }
+  }
+  &.ed-tier{
+    padding-bottom: 0;
   }
   .ed-list{
     margin: 0;
@@ -921,8 +940,10 @@ ul.sm-list{
       list-style: none;
       position: relative;
       transition: all .5s;
+      border-bottom: 2px solid $darkblue;
       &:nth-child(6),
       &:nth-child(2){
+        border-bottom: 2px solid $green;
         h2{
         color: $green;
         }
@@ -932,6 +953,7 @@ ul.sm-list{
       }
       &:nth-child(7),
       &:nth-child(3){
+        border-bottom: 2px solid $gray;
         h2{
         color: $gray;
         }
@@ -940,6 +962,7 @@ ul.sm-list{
         }
       }
       &:nth-child(4){
+        border-bottom: 2px solid $bluetwo;
         h2{
         color: $bluetwo;
         }
@@ -960,6 +983,7 @@ ul.sm-list{
       }
       &:hover{
         background: $primary;
+        border-bottom: 2px solid $primary !important;
         a.pam-button{
           border: 1px solid #fff;
           color: #Fff;
@@ -1070,11 +1094,9 @@ ul.sm-list{
     }
   }
   &.howitworks-tier{
-    padding: 2vw 1vw;
+    padding: 2vw 1vw 0;
   }
-  &.pd-0{
-    padding-bottom: 0;
-  }
+
   .intro-container{
     position: relative;
     margin: 30px auto;

@@ -3,14 +3,14 @@
   "title": "Who We Are"
 }
 ---
-<div class="int-tier pd-0">
+<div class="int-tier pd-0 team-intro">
   <div class="pam-container">
     <div class="intro-container pam-text-center" data-ani="fadeInUp">
       <p>Our team works as a unit to comprehensively support your financial wellbeing. We collaborate constantly, working together so that every team member at any moment can provide insight and guidance about your financial plan. We’re always striving to improve, seeking industry knowledge and client feedback so our service to you improves with every interaction.</p>
     </div>
   </div>
 </div>
-<div class="int-tier pd-0">
+<div class="int-tier pd-0 team-tier">
   <div class="pam-container pam-text-center">
     <h2 class="pam-text-center" data-ani="fadeInUp">Meet Our Team</h2>
     <div class="pam-flex team-container">
@@ -94,10 +94,23 @@
   </div>
 </div>
 {{ range $i, $t := .site.team }}
-  <div class="popup-container team-popup" data-popup-src="bio-{{$i}}">
+  <div class="popup-container team-popup active" data-popup-src="bio-{{$i}}">
     <div class="pam-flex popup-team-container">
       <div class="pam-medium-4 pam-columns valign-top pam-text-center popup-headshot-container">
         <img src="{{ file $t.headshot }}" alt="{{ $t.name }}">
+        <div class="under-headshot">
+          <ul class="popup-contact-list">
+            {{ if $t.linkedin }}
+              <li><a class="linkedin" href="{{ $t.linkedin }}" target="_blank"><i class="lmg-fab lmg-fa-linkedin-in"><label>.</label></i> LinkedIn</a></li>
+            {{ end }}
+            {{ if $t.email }}
+              <li><a class="email" href="mailto:{{ $t.email }}"><i class="lmg-fas lmg-fa-envelope"><label>.</label></i> Email {{ $t.first_name }}</a></li>
+            {{ end }}
+            {{ if $t.phone }}
+              <li><a class="phone" href="tel:{{ $t.phone }}"><i class="lmg-fas lmg-fa-mobile-alt"><label>.</label></i> {{ $t.phone }}</a></li>
+            {{ end }}
+          </ul>
+        </div>
       </div>
       <div class="pam-medium-8 bio-side pam-columns valign-top bio">
         <div class="bio-container">
@@ -105,17 +118,6 @@
             <h2>{{ $t.name }} {{ if $t.designations }}, {{ $t.designations }}{{ end }}</h2>
             {{ if $t.position }}<h3 class="team-position">{{ $t.position }}</h3>{{ end }}
           </div>
-          <ul class="team-contact-list">
-            {{ if $t.linkedin }}
-              <li><a class="lmg-fab lmg-fa-linkedin-in" href="{{ $t.linkedin }}" target="_blank"></a></li>
-            {{ end }}
-            {{ if $t.email }}
-              <li><a class="lmg-fas lmg-fa-envelope" href="mailto:{{ $t.email }}"></a></li>
-            {{ end }}
-            {{ if $t.phone }}
-              <li><a class="lmg-fas lmg-fa-mobile-alt" href="tel:{{ $t.phone }}"></a></li>
-            {{ end }}
-          </ul>
           <div class="bio-content">
             {{ $t.bio }}
           </div>

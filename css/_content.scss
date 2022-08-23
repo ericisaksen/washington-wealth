@@ -603,13 +603,12 @@ ul.sm-list{
         width: 100%;
         @media #{$large-up}{
           width: calc(33.333% - 2em);
-            margin: 80px 1em 0;
         }
         @media #{$medium-only}{
           width: calc(50% - 2em);
             margin: 80px 1em 0;
         }
-        h2{
+        h3{
           font-family: $copy-font;
           font-size: 1.5em;
           color: $primary;

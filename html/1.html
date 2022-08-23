@@ -94,7 +94,7 @@
   </div>
 </div>
 {{ range $i, $t := .site.team }}
-  <div class="popup-container team-popup active" data-popup-src="bio-{{$i}}">
+  <div class="popup-container team-popup" data-popup-src="bio-{{$i}}">
     <div class="pam-flex popup-team-container">
       <div class="pam-medium-4 pam-columns valign-top pam-text-center popup-headshot-container">
         <img src="{{ file $t.headshot }}" alt="{{ $t.name }}">
